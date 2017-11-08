@@ -8,15 +8,15 @@ As for now the original BIOS is in the file `flash.bin`. If you want to reset to
 
 ## Flash and Image files
 
-* flash.bin - Original BIOS image
-* gbe.bin - Gigabit Ethernet blob
-* vgabios.bin Extracted VGA section from flash.bin using the UEFITool
+* `flash.bin` - Original BIOS image
+* `gbe.bin` - Gigabit Ethernet blob
+* `vgabios.bin` Extracted VGA section from flash.bin using the [UEFITool](https://github.com/LongSoft/UEFITool)
 
 ## Builds
 
-All current builds for MY x220t are in the builds folder. Currently there is
+All current builds for **MY** x220t are in the builds folder. Currently there is
 
-* coreboot_gbe_nativevga.rom - Coreboot build with gbe and nativevga.rom
+* `coreboot_gbe_nativevga.rom` - Coreboot build with gbe and native vga
 
 ## Documentation
 

@@ -1,0 +1,3 @@
+# coreboot
+
+My Coreboot exercises

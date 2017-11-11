@@ -14,12 +14,37 @@ As for now the original BIOS is in the file `flash.bin`. If you want to reset to
 
 ## Builds
 
-All current builds for **MY** x220t are in the builds folder. Currently there is
+The current working build is `coreboot-20171108.bin` and stored here.
 
-* `coreboot_gbe_nativevga.rom` - Coreboot build with gbe and native vga
+# Instructions
 
-## Documentation
+These instructions are done myself based on the official instructions from the Wiki and multiple pages.
+It was working for my device but may need some fine-tuning for yours in order to make it work.
 
-Currently very sparse and distributed accross mutliple machines, in the wiki, as a gist and here.
+First: The device **could potentially be destroyed!** Make sure you can afford the loss.
 
-I will work on that soon!
+## Preparations
+
+You will need the following tools
+
+* Laptop (x220 or x220t, I am working on the x220t based on the instructions for the x220, so that one should work fine)
+* Screwdrivers
+* Raspberry Pi 3 Model B
+* USB to TTY Serial Cable
+* Pomona SOIC8 5250 Test Clip
+* 8x Female Jumper Wire
+* HDMI cable, external monitor and external keyboard for the Raspberry
+* (Optional but highly recommended) - Second computer, where you will build coreboot.
+
+In principle you can also build the stuff on the Raspberry, but that might take a while.
+
+## Disassemling the X220t
+
+First: Power down the Laptop and remove the battery. **THIS IS CRITICAL**
+Not removing the power is acutally the only thing where you can screw up really bad! Having the mainboard powered while flashing the BIOS could burn it. Make sure this is done properly!!
+
+Remove the Keyboard and the Palmrest. It works straightforward but if you're unsure, read the Lenovo Guide [https://support.lenovo.com/us/en/videos/pd022683].
+
+I skip this part for now, because other people have documented this pretty well themselves. See for example [https://tylercipriani.com/blog/2016/11/13/coreboot-on-the-thinkpad-x220-with-a-raspberry-pi/]
+
+

@@ -2,6 +2,9 @@
 
 This repository includes all my steps to bring coreboot to my device.
 
-Currently I only have Coreboot running on my Lenovo x200t.
+Currently I only have Coreboot running on my Lenovo x220t.
 
-Some interesting stuff is also in my wiki.
+## Instructions
+
+Go in the directory of the device you're interested in.
+

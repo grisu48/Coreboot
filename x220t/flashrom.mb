@@ -1,0 +1,21 @@
+# Flashrom
+
+This document gives some hints about flashing Coreboot from Linux
+
+In a nutshell
+
+    # Boot kernel with 'iomem=relaxed'
+    # As superuser:
+    flashrom -p internal:laptop=force_I_want_a_brick -c "CHIPNAME" -w BINARY
+
+For now I don't recall the `CHIPNAME`, but it was the most simple one when getting the list with `flashrom -p internal:laptop=force_I_want_a_brick -r`
+
+## Strict DevMem
+
+As of Kernel 4.4, `CONFIG_IO_STRICT_DEVMEM` is a new security measure than can make flashrom stop working. In that case add `iomem=relaxed` to your kernel parameters (https://wiki.archlinux.org/index.php/Flashing_BIOS_from_Linux#Usage)
+
+
+## Weblinks 
+
+* https://wiki.archlinux.org/index.php/Flashing_BIOS_from_Linux
+

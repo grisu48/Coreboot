@@ -1,2 +1,0 @@
-flashrom -p internal:laptop=force_I_want_a_brick -w coreboot-20180502.bin
-

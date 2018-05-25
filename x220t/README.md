@@ -14,7 +14,18 @@ As for now the original BIOS is in the file `flash.bin`. If you want to reset to
 
 ## Builds
 
-The current working build is `coreboot-20171108.bin` and stored here.
+The current working build is `coreboot-20180502.bin` and stored here.
+
+The status of the builds is
+
+* `coreboot-20180502.bin` ***(Current)*** - Tested, OK
+* `coreboot-20171108.bin` - Tested, OK
+
+### coreboot-20180502.bin
+
+This is the current build, based on Coreboot 4.7.
+
+This build is a bit picky about the memory bars, I had to unplug and re-plug them.
 
 # Instructions
 
@@ -47,4 +58,25 @@ Remove the Keyboard and the Palmrest. It works straightforward but if you're uns
 
 I skip this part for now, because other people have documented this pretty well themselves. See for example [https://tylercipriani.com/blog/2016/11/13/coreboot-on-the-thinkpad-x220-with-a-raspberry-pi/]
 
+# Update
+
+You can re-follow the procedure above, or you use `flashrom` to update an already with Coreboot flashed laptop.
+
+## Flashrom
+
+In a nutshell
+
+    # Boot kernel with 'iomem=relaxed'
+    # As superuser:
+    flashrom -p internal:laptop=force_I_want_a_brick -c "CHIPNAME" -w BINARY
+
+For now I don't recall the `CHIPNAME`, but it was the most simple one when getting the list with `flashrom -p internal:laptop=force_I_want_a_brick`
+
+### Strict DevMem
+
+As of Kernel 4.4, `CONFIG_IO_STRICT_DEVMEM` is a new security measure than can make flashrom stop working. In that case add `iomem=relaxed` to your kernel parameters (https://wiki.archlinux.org/index.php/Flashing_BIOS_from_Linux#Usage)
+
+### Weblinks 
+
+* https://wiki.archlinux.org/index.php/Flashing_BIOS_from_Linux
 

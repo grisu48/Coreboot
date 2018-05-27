@@ -14,12 +14,17 @@ As for now the original BIOS is in the file `flash.bin`. If you want to reset to
 
 ## Builds
 
-The current working build is `coreboot-20180502.bin` and stored here.
+The current working build is `coreboot-20180527.bin`.
 
 The status of the builds is
 
-* `coreboot-20180502.bin` ***(Current)*** - Tested, OK
+* `coreboot-20180527.bin` ***(Current)*** - Testing
+* `coreboot-20180502.bin` - Tested, OK
 * `coreboot-20171108.bin` - Tested, OK
+
+### coreboot-20180527.bin
+
+This is the current build, based on Coreboot 4.8 (Commit 98376b84592aea85089f047957c39b3889136574)
 
 ### coreboot-20180502.bin
 

@@ -75,7 +75,12 @@ In a nutshell
     # As superuser:
     flashrom -p internal:laptop=force_I_want_a_brick -c "CHIPNAME" -w BINARY
 
-For now I don't recall the `CHIPNAME`, but it was the most simple one when getting the list with `flashrom -p internal:laptop=force_I_want_a_brick`
+For now I don't recall the `CHIPNAME`, but it was the most simple one when getting the list with `flashrom -p internal:laptop=force_I_want_a_brick`.
+
+    # Get list of available chips
+    sudo flashrom -p internal:laptop=force_I_want_a_brick
+
+On my x220t `CHIPNAME` is `MX25L6405`
 
 ### Strict DevMem
 

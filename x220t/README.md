@@ -14,11 +14,11 @@ As for now the original BIOS is in the file `flash.bin`. If you want to reset to
 
 ## Builds
 
-The current working build is `coreboot-20180527.bin`.
+The current working build is `coreboot-20180527.bin` (Coreboot 4.8)
 
 The status of the builds is
 
-* `coreboot-20180527.bin` ***(Current)*** - Testing
+* `coreboot-20180527.bin` ***(Current)*** - Tested, OK
 * `coreboot-20180502.bin` - Tested, OK
 * `coreboot-20171108.bin` - Tested, OK
 
@@ -26,11 +26,36 @@ The status of the builds is
 
 This is the current build, based on Coreboot 4.8 (Commit 98376b84592aea85089f047957c39b3889136574)
 
+Tested on my x220t, works fine. One issue still needs investigation: if the `intel_idle.max_cstate=1` is still required.
+
 ### coreboot-20180502.bin
 
 This is the current build, based on Coreboot 4.7.
 
-This build is a bit picky about the memory bars, I had to unplug and re-plug them.
+This build is a bit picky about the memory bars, I had to unplug and re-plug them and in general has some weird issues from time to time. Take the `coreboot-20180527.bin` build instead.
+
+### coreboot-20171108.bin
+
+First build, works fine. If you expect (like me) random complete system freezes from time to time, consider disabling higher sleeping C-state of the CPU by adding the following to the kernel parameters
+
+    intel_idle.max_cstate=1
+
+See [Random freezes](#Random-freezes) for more details
+
+## Known issues
+
+### Random freezes
+
+If you are expecting random freezes, this could come from the intel CPU, that hangs in a higher C-state.
+
+Solution: add `intel_idle.max_cstate=1` to the kernel parameters
+
+    # in /etc/defaults/grub
+    GRUB_CMDLINE_LINUX_DEFAULTS="intel_idle.max_cstate=1"
+
+That solved the issue for me
+
+Other approaches are documented at https://bbs.archlinux.org/viewtopic.php?id=220716
 
 # Instructions
 

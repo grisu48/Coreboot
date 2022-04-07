@@ -1,0 +1,31 @@
+# Coreboot software archive
+
+Those are some mirrored coreboot resources from https://www.coreboot.org/downloads.html
+
+## Signatures check
+
+The releases are signed with a PGP/GPG signature. To verify the release, run:
+
+    $ gpg --verify coreboot-4.16.tar.xz.sig coreboot-4.16.tar.xz
+
+If you get a message saying "Can't check signature: No public key", copy the key value and fetch it from the keyserver.
+
+    $ gpg --receive-keys 574CE6F6855CFDEB7D368E9D19796C2B3E4F7DF7
+
+Then rerun the verification step.
+
+Note that the warnings "This key is not certified with a trusted signature!" and "There is no indication that the signature belongs to the owner." are normal
+
+### Keys
+
+Keys used to sign the binaries as of 4.16:
+
+    1504DB83B93905F5160EB3FD86EB211649573F59 - Jason Glenesk (coreboot developer) <Jason.Glenesk@gmail.com>
+    D0BB76A6FB81653A2B175BC2DB682C092C49D476 - Patrick Georgi <<atrick@georgi.software>
+    7642F206B20B77DAEB5B611A53C88CBFBC4F65F3 - Angel Pons <th3fanbus@gmail.com>
+    EB51718A2D22AB1DA92C74B11F991B62CCC9259B - Patrick Georgi <patrick@georgi.software>
+    3D705758E41EB17A3D28754941050E818DCB9057 - Patrick Georgi <pgeorgi@google.com>
+    390DCF788BF9AA504F8FF1E2C29E9DA6A0DF8604 - Alexander Couzens <lynxis@fe80.eu>
+    574CE6F6855CFDEB7D368E9D19796C2B3E4F7DF7 - Martin Roth (coreboot developer) <martin@coreboot.org>
+
+
